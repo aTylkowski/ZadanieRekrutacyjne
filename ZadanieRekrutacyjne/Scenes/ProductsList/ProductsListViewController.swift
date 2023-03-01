@@ -1,10 +1,10 @@
 import UIKit
 
 final class ProductsListViewController: UIViewController {
-    private let viewModel: ProductListViewModelProtocol
+    private let productsListView: ProductsListView
 
     init(viewModel: ProductListViewModelProtocol) {
-        self.viewModel = viewModel
+        productsListView = ProductsListView(viewModel: viewModel)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -14,12 +14,12 @@ final class ProductsListViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        view = ProductsListView()
+        view = productsListView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchProducts()
+        productsListView.fetchProducts()
     }
 }
 

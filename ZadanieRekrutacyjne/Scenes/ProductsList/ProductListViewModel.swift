@@ -1,19 +1,23 @@
 import Foundation
 
 protocol ProductListViewModelProtocol {
-    func fetchProducts()
+    var dataSource: ProductsListDataSource { get set }
+    func fetchProducts(completion: @escaping (Result<Void, Error>) -> Void)
 }
 
 final class ProductListViewModel: ProductListViewModelProtocol {
     private let networkManager = NetworkManager()
+    var dataSource = ProductsListDataSource()
 
-    func fetchProducts() {
-        networkManager.get(for: [Product].self, service: ProductsService.productsList) { result in
+    func fetchProducts(completion: @escaping (Result<Void, Error>) -> Void) {
+        networkManager.get(for: [Product].self, service: ProductsService.productsList) { [weak self] result in
+            guard let self else { return }
             switch result {
             case .success(let products):
-                print(products)
+                self.dataSource.products = products
+                completion(.success(()))
             case .failure(let error):
-                print(error)
+                completion(.failure(error))
             }
         }
     }

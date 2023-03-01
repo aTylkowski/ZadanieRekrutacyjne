@@ -22,6 +22,10 @@
 		25E3C8F029AFF10D00F0C3BF /* ProductsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8EF29AFF10D00F0C3BF /* ProductsListDataSource.swift */; };
 		25E3C8F229AFF2B700F0C3BF /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8F129AFF2B700F0C3BF /* ProductListCell.swift */; };
 		25E3C8F529AFF38A00F0C3BF /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8F429AFF38A00F0C3BF /* Identifiable.swift */; };
+		25E3C8F729AFFAAA00F0C3BF /* LayoutEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8F629AFFAAA00F0C3BF /* LayoutEdge.swift */; };
+		25E3C8F929AFFAFA00F0C3BF /* SequenceOptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8F829AFFAFA00F0C3BF /* SequenceOptionSet.swift */; };
+		25E3C8FB29AFFB2400F0C3BF /* OptionSetIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8FA29AFFB2400F0C3BF /* OptionSetIterator.swift */; };
+		25E3C8FE29AFFD2500F0C3BF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8FD29AFFD2500F0C3BF /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		25E3C8EF29AFF10D00F0C3BF /* ProductsListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListDataSource.swift; sourceTree = "<group>"; };
 		25E3C8F129AFF2B700F0C3BF /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		25E3C8F429AFF38A00F0C3BF /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		25E3C8F629AFFAAA00F0C3BF /* LayoutEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutEdge.swift; sourceTree = "<group>"; };
+		25E3C8F829AFFAFA00F0C3BF /* SequenceOptionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceOptionSet.swift; sourceTree = "<group>"; };
+		25E3C8FA29AFFB2400F0C3BF /* OptionSetIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSetIterator.swift; sourceTree = "<group>"; };
+		25E3C8FD29AFFD2500F0C3BF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +130,20 @@
 			isa = PBXGroup;
 			children = (
 				25E3C8F429AFF38A00F0C3BF /* Identifiable.swift */,
+				25E3C8FD29AFFD2500F0C3BF /* Colors.swift */,
+				25E3C8FC29AFFB4F00F0C3BF /* Layout */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		25E3C8FC29AFFB4F00F0C3BF /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				25E3C8F629AFFAAA00F0C3BF /* LayoutEdge.swift */,
+				25E3C8F829AFFAFA00F0C3BF /* SequenceOptionSet.swift */,
+				25E3C8FA29AFFB2400F0C3BF /* OptionSetIterator.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,13 +216,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E3C8F729AFFAAA00F0C3BF /* LayoutEdge.swift in Sources */,
+				25E3C8FB29AFFB2400F0C3BF /* OptionSetIterator.swift in Sources */,
 				25E3C8DF29AFDFDA00F0C3BF /* ProductsListView.swift in Sources */,
+				25E3C8FE29AFFD2500F0C3BF /* Colors.swift in Sources */,
 				25E3C8CA29AFDD3700F0C3BF /* ProductsListViewController.swift in Sources */,
 				25E3C8E729AFE3C600F0C3BF /* ServiceProtocol.swift in Sources */,
 				25E3C8F029AFF10D00F0C3BF /* ProductsListDataSource.swift in Sources */,
 				25E3C8E229AFE04A00F0C3BF /* Product.swift in Sources */,
 				25E3C8F229AFF2B700F0C3BF /* ProductListCell.swift in Sources */,
 				25E3C8EB29AFE48100F0C3BF /* NetworkManager.swift in Sources */,
+				25E3C8F929AFFAFA00F0C3BF /* SequenceOptionSet.swift in Sources */,
 				25E3C8E929AFE3FD00F0C3BF /* HTTPMethod.swift in Sources */,
 				25E3C8EE29AFE9DC00F0C3BF /* ProductListViewModel.swift in Sources */,
 				25E3C8C629AFDD3700F0C3BF /* AppDelegate.swift in Sources */,

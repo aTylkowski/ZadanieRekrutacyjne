@@ -1,14 +1,7 @@
-//
-//  ProductsListDataSource.swift
-//  ZadanieRekrutacyjne
-//
-//  Created by Aleksy Tylkowski on 01/03/2023.
-//
-
 import UIKit
 
 final class ProductsListDataSource: NSObject {
-    private var products: [Product] = []
+    var products: [Product] = []
 }
 
 extension ProductsListDataSource: UITableViewDataSource {
