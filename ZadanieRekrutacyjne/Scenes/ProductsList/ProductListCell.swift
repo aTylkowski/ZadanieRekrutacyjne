@@ -7,6 +7,7 @@ class ProductListCell: UITableViewCell, Identifiable {
         static let containerViewCornerRadius: CGFloat = 10
         static let imageViewCornerRadius: CGFloat = 30
         static let imageViewSize = CGSize(width: 60, height: 60)
+        static let stackViewPadding = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 12)
     }
 
     private let containerView: UIView = {
@@ -25,6 +26,29 @@ class ProductListCell: UITableViewCell, Identifiable {
         return imageView
     }()
 
+    private let priceLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
+        label.textColor = Colors.primary
+        return label
+    }()
+
+    private let nameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
+        label.textColor = Colors.secondary
+        return label
+    }()
+
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        return stackView
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -38,14 +62,22 @@ class ProductListCell: UITableViewCell, Identifiable {
         selectionStyle = .none
         backgroundColor = .clear
         contentView.addSubview(containerView)
-        containerView.constraintEdges(to: contentView, insets: Constants.containerViewPadding)
+        contentView.addSubview(stackView)
 
+        containerView.constraintEdges(to: contentView, insets: Constants.containerViewPadding)
         containerView.addSubview(productImageView)
+
         productImageView.constraint(to: containerView, edges: [.leading, .top, .bottom], insets: Constants.productImageViewPadding)
         productImageView.constraintSize(to: Constants.imageViewSize)
+
+        stackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(priceLabel)
+        stackView.constraint(to: containerView, edges: [.trailing, .top, .bottom], insets: Constants.stackViewPadding)
     }
 
     func configure(for product: Product) {
         productImageView.loadImage(withUrl: product.imageUrl)
+        priceLabel.text = String(product.price)
+        nameLabel.text = product.name
     }
 }
