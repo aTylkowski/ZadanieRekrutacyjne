@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  ZadanieRekrutacyjne
-//
-//  Created by Aleksy Tylkowski on 01/03/2023.
-//
-
 import UIKit
 
 @main
@@ -19,4 +12,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 }
-
