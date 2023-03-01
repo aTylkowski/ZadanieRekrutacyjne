@@ -2,6 +2,7 @@ import UIKit
 
 final class ProductsListView: UITableView {
     private let viewModel: ProductListViewModelProtocol
+    var showAlertHandler: ((String) -> (Void))?
 
     init(viewModel: ProductListViewModelProtocol) {
         self.viewModel = viewModel
@@ -33,6 +34,6 @@ final class ProductsListView: UITableView {
     }
 
     private func showError(withText text: String) {
-        
+        showAlertHandler?(text)
     }
 }

@@ -20,6 +20,16 @@ final class ProductsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         productsListView.fetchProducts()
+        productsListView.showAlertHandler? = { [weak self] text in
+            self?.showAlert(withText: text)
+        }
+    }
+
+    private func showAlert(withText text: String) {
+        let alert = UIAlertController(title: "Failed to fetch products", message: text, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
