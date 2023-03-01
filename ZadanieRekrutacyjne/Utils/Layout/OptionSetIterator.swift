@@ -1,10 +1,3 @@
-//
-//  OptionSetIterator.swift
-//  ZadanieRekrutacyjne
-//
-//  Created by Aleksy Tylkowski on 01/03/2023.
-//
-
 import Foundation
 
 public struct OptionSetIterator<Element: OptionSet>: IteratorProtocol where Element.RawValue == Int {

@@ -11,6 +11,7 @@ final class ProductsListView: UITableView {
         dataSource = viewModel.dataSource
         register(ProductListCell.self, forCellReuseIdentifier: ProductListCell.id)
         separatorStyle = .none
+        backgroundColor = Colors.background
     }
 
     required init?(coder: NSCoder) {
