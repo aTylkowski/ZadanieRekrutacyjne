@@ -1,7 +1,7 @@
 import Foundation
 
-class NetworkService {
-    func get<T: Decodable>(model: T,
+class NetworkManager {
+    func get<T: Decodable>(for: T.Type = T.self,
                            service: ServiceProtocol,
                            completion: @escaping (Result<T, Error>) -> Void) {
         let request = makeRequest(service: service)

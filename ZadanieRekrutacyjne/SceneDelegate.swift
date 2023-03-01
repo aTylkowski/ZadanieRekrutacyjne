@@ -8,8 +8,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ProductsListViewController()
+        window?.rootViewController = makeRootViewController()
         window?.makeKeyAndVisible()
     }
-}
 
+    private func makeRootViewController() -> UIViewController {
+        let viewModel = ProductListViewModel()
+        return ProductsListViewController(viewModel: viewModel)
+    }
+}

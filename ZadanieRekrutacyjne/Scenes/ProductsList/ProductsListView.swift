@@ -1,8 +1,8 @@
 import UIKit
 
-final class ProductsListView: UIView {
+final class ProductsListView: UITableView {
     init() {
-        super.init(frame: .zero)
+        super.init(frame: .zero, style: .plain)
     }
 
     required init?(coder: NSCoder) {

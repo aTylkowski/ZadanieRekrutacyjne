@@ -17,8 +17,11 @@
 		25E3C8E529AFE2AF00F0C3BF /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8E429AFE2AF00F0C3BF /* ProductsService.swift */; };
 		25E3C8E729AFE3C600F0C3BF /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8E629AFE3C600F0C3BF /* ServiceProtocol.swift */; };
 		25E3C8E929AFE3FD00F0C3BF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8E829AFE3FD00F0C3BF /* HTTPMethod.swift */; };
-		25E3C8EB29AFE48100F0C3BF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8EA29AFE48100F0C3BF /* NetworkService.swift */; };
+		25E3C8EB29AFE48100F0C3BF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8EA29AFE48100F0C3BF /* NetworkManager.swift */; };
 		25E3C8EE29AFE9DC00F0C3BF /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8ED29AFE9DC00F0C3BF /* ProductListViewModel.swift */; };
+		25E3C8F029AFF10D00F0C3BF /* ProductsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8EF29AFF10D00F0C3BF /* ProductsListDataSource.swift */; };
+		25E3C8F229AFF2B700F0C3BF /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8F129AFF2B700F0C3BF /* ProductListCell.swift */; };
+		25E3C8F529AFF38A00F0C3BF /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C8F429AFF38A00F0C3BF /* Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +37,11 @@
 		25E3C8E429AFE2AF00F0C3BF /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
 		25E3C8E629AFE3C600F0C3BF /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 		25E3C8E829AFE3FD00F0C3BF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		25E3C8EA29AFE48100F0C3BF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		25E3C8EA29AFE48100F0C3BF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		25E3C8ED29AFE9DC00F0C3BF /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		25E3C8EF29AFF10D00F0C3BF /* ProductsListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListDataSource.swift; sourceTree = "<group>"; };
+		25E3C8F129AFF2B700F0C3BF /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		25E3C8F429AFF38A00F0C3BF /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		25E3C8C429AFDD3700F0C3BF /* ZadanieRekrutacyjne */ = {
 			isa = PBXGroup;
 			children = (
+				25E3C8F329AFF37D00F0C3BF /* Utils */,
 				25E3C8C529AFDD3700F0C3BF /* AppDelegate.swift */,
 				25E3C8C729AFDD3700F0C3BF /* SceneDelegate.swift */,
 				25E3C8DA29AFDF7400F0C3BF /* Scenes */,
@@ -93,7 +100,7 @@
 				25E3C8E429AFE2AF00F0C3BF /* ProductsService.swift */,
 				25E3C8E629AFE3C600F0C3BF /* ServiceProtocol.swift */,
 				25E3C8E829AFE3FD00F0C3BF /* HTTPMethod.swift */,
-				25E3C8EA29AFE48100F0C3BF /* NetworkService.swift */,
+				25E3C8EA29AFE48100F0C3BF /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -105,8 +112,18 @@
 				25E3C8DE29AFDFDA00F0C3BF /* ProductsListView.swift */,
 				25E3C8C929AFDD3700F0C3BF /* ProductsListViewController.swift */,
 				25E3C8ED29AFE9DC00F0C3BF /* ProductListViewModel.swift */,
+				25E3C8EF29AFF10D00F0C3BF /* ProductsListDataSource.swift */,
+				25E3C8F129AFF2B700F0C3BF /* ProductListCell.swift */,
 			);
 			path = ProductsList;
+			sourceTree = "<group>";
+		};
+		25E3C8F329AFF37D00F0C3BF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				25E3C8F429AFF38A00F0C3BF /* Identifiable.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,11 +199,14 @@
 				25E3C8DF29AFDFDA00F0C3BF /* ProductsListView.swift in Sources */,
 				25E3C8CA29AFDD3700F0C3BF /* ProductsListViewController.swift in Sources */,
 				25E3C8E729AFE3C600F0C3BF /* ServiceProtocol.swift in Sources */,
+				25E3C8F029AFF10D00F0C3BF /* ProductsListDataSource.swift in Sources */,
 				25E3C8E229AFE04A00F0C3BF /* Product.swift in Sources */,
-				25E3C8EB29AFE48100F0C3BF /* NetworkService.swift in Sources */,
+				25E3C8F229AFF2B700F0C3BF /* ProductListCell.swift in Sources */,
+				25E3C8EB29AFE48100F0C3BF /* NetworkManager.swift in Sources */,
 				25E3C8E929AFE3FD00F0C3BF /* HTTPMethod.swift in Sources */,
 				25E3C8EE29AFE9DC00F0C3BF /* ProductListViewModel.swift in Sources */,
 				25E3C8C629AFDD3700F0C3BF /* AppDelegate.swift in Sources */,
+				25E3C8F529AFF38A00F0C3BF /* Identifiable.swift in Sources */,
 				25E3C8C829AFDD3700F0C3BF /* SceneDelegate.swift in Sources */,
 				25E3C8E529AFE2AF00F0C3BF /* ProductsService.swift in Sources */,
 			);
@@ -332,7 +352,6 @@
 				INFOPLIST_FILE = ZadanieRekrutacyjne/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
