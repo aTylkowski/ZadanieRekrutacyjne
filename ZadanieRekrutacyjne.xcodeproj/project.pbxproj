@@ -29,6 +29,7 @@
 		25E3C90129B007E900F0C3BF /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C90029B007E900F0C3BF /* UIImageView+Extensions.swift */; };
 		25E3C90429B0177600F0C3BF /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C90329B0177600F0C3BF /* ProductDetailsViewController.swift */; };
 		25E3C90629B017DE00F0C3BF /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C90529B017DE00F0C3BF /* ProductDetailsView.swift */; };
+		25E3C90829B02EA600F0C3BF /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3C90729B02EA600F0C3BF /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		25E3C90029B007E900F0C3BF /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		25E3C90329B0177600F0C3BF /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		25E3C90529B017DE00F0C3BF /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		25E3C90729B02EA600F0C3BF /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				25E3C8F429AFF38A00F0C3BF /* Identifiable.swift */,
 				25E3C8FD29AFFD2500F0C3BF /* Colors.swift */,
+				25E3C90729B02EA600F0C3BF /* Images.swift */,
 				25E3C8FC29AFFB4F00F0C3BF /* Layout */,
 			);
 			path = Utils;
@@ -248,6 +251,7 @@
 				25E3C8CA29AFDD3700F0C3BF /* ProductsListViewController.swift in Sources */,
 				25E3C90429B0177600F0C3BF /* ProductDetailsViewController.swift in Sources */,
 				25E3C8E729AFE3C600F0C3BF /* ServiceProtocol.swift in Sources */,
+				25E3C90829B02EA600F0C3BF /* Images.swift in Sources */,
 				25E3C8F029AFF10D00F0C3BF /* ProductsListDataSource.swift in Sources */,
 				25E3C8E229AFE04A00F0C3BF /* Product.swift in Sources */,
 				25E3C90629B017DE00F0C3BF /* ProductDetailsView.swift in Sources */,

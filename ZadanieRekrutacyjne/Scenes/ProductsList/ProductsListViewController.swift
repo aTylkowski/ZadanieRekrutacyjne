@@ -3,6 +3,12 @@ import UIKit
 final class ProductsListViewController: UIViewController {
     private let productsListView: ProductsListView
 
+    private let refreshButton: UIButton = {
+        let button = UIButton()
+        button.setImage(Images.refresh, for: .normal)
+        return button
+    }()
+
     init(viewModel: ProductListViewModelProtocol) {
         productsListView = ProductsListView(viewModel: viewModel)
         super.init(nibName: nil, bundle: nil)
@@ -28,6 +34,14 @@ final class ProductsListViewController: UIViewController {
         productsListView.showAlertHandler? = { [weak self] text in
             self?.showAlert(withText: text)
         }
+        setupRefreshButton()
+    }
+
+    private func setupRefreshButton() {
+        refreshButton.addTarget(self, action: #selector(didTapRefreshButton), for: .touchUpInside)
+
+        let barButton = UIBarButtonItem(customView: refreshButton)
+        navigationItem.rightBarButtonItem = barButton
     }
 
     private func showAlert(withText text: String) {
@@ -40,6 +54,11 @@ final class ProductsListViewController: UIViewController {
     private func showProductDetails(for product: Product) {
         let productDetailsViewController = ProductDetailsViewController(product: product)
         navigationController?.pushViewController(productDetailsViewController, animated: true)
+    }
+
+    @objc
+    private func didTapRefreshButton() {
+        productsListView.fetchProducts()
     }
 }
 
