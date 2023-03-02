@@ -28,12 +28,8 @@ final class ProductsListView: UITableView {
                     self.reloadData()
                 }
             case .failure(let error):
-                self.showError(withText: error.localizedDescription)
+                self.showAlertHandler?(error.localizedDescription)
             }
         }
-    }
-
-    private func showError(withText text: String) {
-        showAlertHandler?(text)
     }
 }

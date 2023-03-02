@@ -6,6 +6,10 @@ final class ProductsListViewController: UIViewController {
     init(viewModel: ProductListViewModelProtocol) {
         productsListView = ProductsListView(viewModel: viewModel)
         super.init(nibName: nil, bundle: nil)
+
+        viewModel.dataSource.didSelectProductHandler = { [weak self] product in
+            self?.showProductDetails(for: product)
+        }
     }
 
     required init?(coder: NSCoder) {
@@ -20,6 +24,7 @@ final class ProductsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         productsListView.fetchProducts()
+
         productsListView.showAlertHandler? = { [weak self] text in
             self?.showAlert(withText: text)
         }
@@ -29,7 +34,12 @@ final class ProductsListViewController: UIViewController {
         let alert = UIAlertController(title: "Failed to fetch products", message: text, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func showProductDetails(for product: Product) {
+        let productDetailsViewController = ProductDetailsViewController(product: product)
+        navigationController?.pushViewController(productDetailsViewController, animated: true)
     }
 }
 

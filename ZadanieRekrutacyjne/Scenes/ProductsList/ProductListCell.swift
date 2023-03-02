@@ -14,7 +14,7 @@ final class ProductListCell: UITableViewCell, Identifiable {
     private let containerView: UIView = {
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.backgroundColor = Colors.cell
+        containerView.backgroundColor = Colors.secondaryBackground
         containerView.layer.cornerRadius = Constants.containerViewCornerRadius
         return containerView
     }()

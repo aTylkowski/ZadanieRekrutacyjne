@@ -2,6 +2,7 @@ import UIKit
 
 final class ProductsListDataSource: NSObject {
     var products: [Product] = []
+    var didSelectProductHandler: ((Product) -> (Void))?
 }
 
 extension ProductsListDataSource: UITableViewDataSource {
@@ -16,4 +17,8 @@ extension ProductsListDataSource: UITableViewDataSource {
     }
 }
 
-extension ProductsListDataSource: UITableViewDelegate { }
+extension ProductsListDataSource: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectProductHandler?(products[indexPath.row])
+    }
+}

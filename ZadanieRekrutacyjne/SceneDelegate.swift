@@ -12,8 +12,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
 
-    private func makeRootViewController() -> UIViewController {
+    private func makeRootViewController() -> UINavigationController {
         let viewModel = ProductListViewModel()
-        return ProductsListViewController(viewModel: viewModel)
+        let rootViewController = ProductsListViewController(viewModel: viewModel)
+        return UINavigationController(rootViewController: rootViewController)
     }
 }
